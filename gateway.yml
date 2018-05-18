@@ -1,0 +1,16 @@
+server:
+  port: 5555
+
+eureka:
+  client: 
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+zuul:
+  routes:
+    add-service-demo:
+      path: /api-b/**
+      serviceId: add-service-demo
+    add-service-client:
+      path: /api-a/**
+      serviceId: add-service-client
